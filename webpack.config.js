@@ -188,14 +188,6 @@ module.exports = (env = {}, argv) => {
 
             const production = [
                 new plugins.clean(),
-                new plugins.copy({
-                    patterns: [
-                        {
-                            from: "data/**/*.json",
-                            transform: (content) => minJSON(content.toString()),
-                        },
-                    ],
-                }),
                 new plugins.sri({
                     hashFuncNames: ["sha384"],
                     enabled: true,
