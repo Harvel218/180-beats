@@ -1,0 +1,36 @@
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    &__tile {
+        margin: 48px;
+
+        &--image {
+            border-radius: 0;
+            transition: border-radius 0.5s;
+            
+            &.scrolling {
+                border-radius: 50%;
+                animation: imageScrollEffect 2s infinite;
+            }
+        }
+    }
+}
+
+@keyframes imageScrollEffect {
+    40% {
+        transform: rotate(360deg);
+    }
+
+    60% {
+        transform: rotate(270deg);
+    }
+
+    80% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

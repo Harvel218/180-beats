@@ -1,0 +1,30 @@
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 48px;
+    animation-name: mounted;
+    animation-duration: 2s;
+
+    &__column {
+        width: 50%;
+        min-width: 280px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@keyframes mounted {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,64 @@
+.navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $primary-color;
+
+    &__links {
+        display: block;
+        visibility: hidden;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+        background-color: $primary-color;
+        padding: 74px 0 74px 38px;
+
+        &.is-active {
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        @media (min-width: $mobile) {
+            padding: 16px;
+            position: static;
+        }
+
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+
+    &__search {
+        display: flex;
+
+        input:disabled {
+            opacity: 0;
+        }
+
+        input {
+            opacity: 1;
+            width: 100%;
+        }
+
+        &--icon {
+            background-color: $secondary-color;
+            cursor: pointer;
+            position: static;
+        }
+    }
+
+    @media (min-width: $mobile) {
+        &__links {
+            visibility: visible;
+            transform: none;
+            transition: none;
+        }
+    }
+}
